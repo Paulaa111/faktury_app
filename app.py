@@ -23,7 +23,7 @@ def get_logo_b64():
     return None
 
 LOGO_B64 = get_logo_b64()
-LOGO_HTML = f'<img src="data:image/png;base64,{LOGO_B64}" style="height:48px;display:block;" />' if LOGO_B64 else ""
+LOGO_HTML = f'<img src="data:image/png;base64,{LOGO_B64}" style="height:40px;display:block;filter:brightness(1.1);" />' if LOGO_B64 else "<span style=\"font-family:\'Syne\',sans-serif;font-size:1.5rem;font-weight:800;color:#fff;\">Ermon.</span>"
 
 # ── CSS ────────────────────────────────────────────────────────────────────────
 st.markdown("""
@@ -34,12 +34,12 @@ st.markdown("""
     --purple:    #2c016d;
     --pink:      #ff466b;
     --blue:      #3337bd;
-    --bg:        #08010f;
-    --surface:   #110328;
-    --surface2:  #1a0540;
-    --border:    #2e0a6e;
+    --bg:        #12062a;
+    --surface:   #1c0d3a;
+    --surface2:  #261550;
+    --border:    #3d2070;
     --text:      #f5f0ff;
-    --muted:     #8b7aaa;
+    --muted:     #a090c8;
 }
 
 html, body, [class*="css"] {
@@ -48,7 +48,10 @@ html, body, [class*="css"] {
     color: var(--text) !important;
 }
 .main, .block-container { background-color: var(--bg) !important; }
-.block-container { padding: 2rem 2.5rem; max-width: 1200px; }
+.block-container { padding: 3rem 2.5rem 2rem 2.5rem !important; max-width: 1200px; }
+header[data-testid="stHeader"] { background-color: var(--bg) !important; }
+div[data-testid="stAppViewContainer"] { background-color: var(--bg) !important; }
+div[data-testid="stDecoration"] { display: none !important; }
 
 /* Header */
 .top-header {
